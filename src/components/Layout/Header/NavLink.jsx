@@ -6,7 +6,7 @@ export default function NavLink({ item, navClose }) {
     <>
       <ListItem>
         <Link
-          sx={{ textDecoration: 'none', fontWeight: '500' }}
+          sx={{ textDecoration: 'none', fontWeight: '500', flex: '1' }}
           color="inherit"
           href={item.href}
           onClick={navClose}

@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import Popover from '@mui/material/Popover';
 import List from '@mui/material/List';
 import NavLink from './NavLink'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default function DeskNav({ item, navClose }) {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -24,6 +25,7 @@ export default function DeskNav({ item, navClose }) {
         <>
           <Button aria-describedby={id} sx={{ textTransform: 'none', fontSize: '1rem'}} variant="text" color="inherit" onClick={handleClick}>
             {item.label}
+            <ExpandMoreIcon />
           </Button>
           <Popover
             id={id}

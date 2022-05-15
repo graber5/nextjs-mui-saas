@@ -4,7 +4,8 @@ import Link from '../../Link';
 import Collapse from '@mui/material/Collapse';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import NavLink from './NavLink'
+import NavLink from './NavLink';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default function MobileNav({ item, navClose }) {
   const [open, setOpen] = useState(false);
@@ -17,8 +18,18 @@ export default function MobileNav({ item, navClose }) {
     <>
       {item.childrens ? (
         <>
-          <Button variant="link" sx={{ textTransform: 'none', fontSize: '1rem' }} onClick={handleClick}>
+          <Button
+            variant="link"
+            sx={{ textTransform: 'none', fontSize: '1rem', justifyContent: 'space-between', width: '100%' }}
+            onClick={handleClick}
+          >
             {item.label}
+            <ExpandMoreIcon
+              sx={{
+                transition: '0.3s',
+                transform: open ? 'rotate(180deg)' : 'rotate(0)',
+              }}
+            />
           </Button>
           <Collapse in={open} animateOpacity>
             <List sx={{ pl: 2 }} disablePadding>
